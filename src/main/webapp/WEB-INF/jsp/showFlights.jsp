@@ -6,21 +6,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Display Places</title>
+<title>Display Flights</title>
 </head>
 <body>
 <div>
-		<h2>List of Sources and Destinations</h2>
+		<h2>List of Flights</h2>
 		<table>
 		<tbody>
 			<tr>
-				<th>Name</th>
-				<th>Country</th>
+				<th>Source</th>
+				<th>Destination</th>
+				<th>Airline</th>
 			</tr>
-			<c:forEach items="${places}" var="place">
+			<c:forEach items="${flights}" var="flight">
 				<tr>
-					<td>${place.name}</td>
-					<td>${place.country}</td>
+					<td>${flight.source.name}</td>
+					<td>${flight.destination.name}</td>
+					<td>${flight.airline.name}</td>
 				</tr>
 			</c:forEach>	
 		</tbody>		

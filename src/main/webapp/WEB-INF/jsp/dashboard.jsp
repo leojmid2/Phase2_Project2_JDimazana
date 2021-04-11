@@ -20,9 +20,9 @@
 	<br>
 	<a href="showPlaces">List of Places</a>
 	<br>
-	<a href="airlines">List of Airlines</a>
+	<a href="showAirlines">List of Airlines</a>
 	<br>
-	<a href="flights">List of Flights</a>
+	<a href="showFlights">List of Flights</a>
 	<input type="hidden" name="userid" value="${user.userid}"/>
 	
 	

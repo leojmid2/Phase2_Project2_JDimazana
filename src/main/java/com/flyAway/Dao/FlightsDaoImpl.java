@@ -18,7 +18,8 @@ public class FlightsDaoImpl implements FlightsDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Flight> getFlights() {
-		return sessionFactory.getCurrentSession().createQuery("from flights").list();
+		//the from Flight is the java class Flight not the table
+		return sessionFactory.getCurrentSession().createQuery("from Flight").list();
 	}
 
 }

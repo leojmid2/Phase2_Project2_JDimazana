@@ -18,7 +18,14 @@ public class AirlinesDaoImpl implements AirlinesDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Airline> getAirlines() {
-		return sessionFactory.getCurrentSession().createQuery("from airlines").list();
+		
+		
+		/*String HQL = "SELECT f.flightId, p.name source, d.name destination, a.name airline, f.price FROM BookingDB.flights f INNER JOIN BookingDB.airlines a ON f.airlineId = a.airlineId "
+				+ "			INNER JOIN BookingDB.places p ON f.sourceId = p.placeId  "
+				+ "			INNER JOIN BookingDB.places d ON f.destinationId = d.placeId";
+		return sessionFactory.getCurrentSession().createQuery(HQL).list();
+		*/
+		return sessionFactory.getCurrentSession().createQuery("from Airline").list();
 	}
 
 }
