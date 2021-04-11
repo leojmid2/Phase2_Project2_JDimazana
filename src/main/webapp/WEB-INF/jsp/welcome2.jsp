@@ -12,6 +12,7 @@
 	<div
 		style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center;">
  
-		Welcome </div>
+		Welcome ${user.userid}
+	</div>
 </body>
 </html>

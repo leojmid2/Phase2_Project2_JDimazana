@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FlyAway Airline Booking</title>
+<title>Display Places</title>
 </head>
 <body>
 	<br>
@@ -12,6 +12,7 @@
 	<div
 		style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center;">
  
-		Welcome </div>
+		Show places here
+	</div>
 </body>
 </html>

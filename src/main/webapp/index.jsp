@@ -7,8 +7,8 @@
 	<br>
 	<div style="text-align: center">
 		<h3>
-			<a href="welcome">Click here to See Welcome Message... </a>(to
-			check Spring MVC Controller... @RequestMapping("/welcome"))
+			<a href="login_admin">Click here to See Admin Login page.. </a>(to
+			check Spring MVC Controller... @RequestMapping("/login_admin"))
 		</h3>
 	</div>
 </body>

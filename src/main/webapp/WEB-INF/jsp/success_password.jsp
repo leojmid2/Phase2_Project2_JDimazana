@@ -11,7 +11,8 @@
 	<br>
 	<div
 		style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center;">
- 
-		Welcome </div>
+		<h2>Password Successfully Changed!</h2>
+
+	</div>
 </body>
 </html>
