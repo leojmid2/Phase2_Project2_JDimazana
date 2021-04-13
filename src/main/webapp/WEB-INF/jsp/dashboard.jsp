@@ -25,7 +25,7 @@
 	<a href="showFlights">List of Flights</a>
 	<input type="hidden" name="userid" value="${user.userid}"/>
 	
-	
+	<a href="index">Go to Search</a>
 	
 </body>
 </html>

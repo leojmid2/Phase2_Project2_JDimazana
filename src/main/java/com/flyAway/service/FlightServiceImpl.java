@@ -21,4 +21,16 @@ public class FlightServiceImpl implements FlightsService {
 		return flightsDao.getFlights();
 	}
 
+	@Override
+	public Flight getFlight(int sourceid, int destinationid, int airlineid) {
+		// TODO Auto-generated method stub
+		return flightsDao.getFlight(sourceid, destinationid, airlineid);
+	}
+
+	@Override
+	public List<Flight> getFlights(int sourceid, int destinationid) {
+		// TODO Auto-generated method stub
+		return flightsDao.getFlights(sourceid, destinationid);
+	}
+
 }

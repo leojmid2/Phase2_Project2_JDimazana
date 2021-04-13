@@ -11,8 +11,11 @@
 	<br>
 	<div
 		style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center;">
- 
-		Error: ${message}
+ 		<h2>Error: ${message}</h2>
 	</div>
+	<div
+		style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center;">
+ 		<a href="${back}">Return to previous page</a>
+ 	</div>
 </body>
 </html>

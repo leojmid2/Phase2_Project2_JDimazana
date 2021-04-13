@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Maven SpringMVC Hibernate Tutorial Series</title>
+<title>FlyAway Booking</title>
 </head>
 <body>
 	<br>

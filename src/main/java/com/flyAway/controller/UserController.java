@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,12 +24,6 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping("/welcome")
-	public ModelAndView helloWorld() {
- 
-		String message = "<br><h3> Hello World, Spring MVC Tutorial</h3><br>";
-		return new ModelAndView("welcome", "message", message);
-	}
 
 	@RequestMapping(value = "/login_admin",  method = RequestMethod.GET)
 	public ModelAndView loginAdmin() {
@@ -38,7 +33,7 @@ public class UserController {
 	
 
 	@RequestMapping(value = "/login_admin",  method = RequestMethod.POST)
-	public ModelAndView loginAdmin(@RequestParam String username, @RequestParam String password ) {
+	public ModelAndView loginAdmin(Model model, @RequestParam String username, @RequestParam String password ) {
  
 		List<User> users = userService.getUser(username, password);
 
@@ -47,6 +42,7 @@ public class UserController {
 			return new ModelAndView("dashboard", "user", user);
 		}
 		else {
+			 model.addAttribute("back","change_password");
 			return new ModelAndView("error","message",username + " doesn't exist. Please try again.");
 		}
 
@@ -58,7 +54,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/change_password",  method = RequestMethod.POST)
-		public ModelAndView savePassword(@RequestParam int userid, @RequestParam String old_password, String password, String password2) {
+		public ModelAndView savePassword(Model model, @RequestParam int userid, @RequestParam String old_password, String password, String password2) {
 		
 			//validate password and new password.
 			//check old password 
@@ -72,10 +68,12 @@ public class UserController {
 					System.out.println("new password save");
 				}
 				else {
+					 model.addAttribute("back","change_password");
 					return new ModelAndView("error","message", "New password doesn't match.Please try again");
 				}
 			}
 			else {
+				 model.addAttribute("back","change_password");
 				return new ModelAndView("error","message", "Incorrect current password.Please try again");
 
 			}

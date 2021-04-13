@@ -15,6 +15,7 @@
 		Enter re-enter new password: <input type="password" name="password2"/><br>
 		<input type="hidden" name="userid" value="${id}"/>
 		<input type="submit" value="Submit"/>
+		<input type="reset" value="Clear"/>
 	</form>
 </body>
 </html>
