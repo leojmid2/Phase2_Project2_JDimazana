@@ -5,45 +5,60 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Registration</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <div align="center">
-        <h1>New Customer</h1>
-        <form action="register" method="post">
-        <table>
-            <tr>
-                <td>First Name:</td>
-                <td><input type="text" name="firstname" /></td>
-            </tr>
-            <tr>
-                <td>Last Name:</td>
-                <td><input type="text" name="lastname" /></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><input type="text" name="email" /></td>
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><input type="text" name="address" /></td>
-            </tr>
-            <tr>
-            	<td>Contact Number</td>
-                <td><input type="text" name="address" /></td>
-            <tr>
-                <td colspan="2" align="center">
-                	<input type="submit" value="Register">
-                </td>
-                 <td colspan="2" align="center">
-                	<input type="reset" value="Clear">
-                </td>
-                
-            </tr>
-        </table>
+    <div class="container">
+    <div>
+        <h1>Registration</h1>
+        
+        <p class="text-danger">${message} </p>
+        
+        <form class="form-horizontal" action="register" method="post">
+        
+        <div class="form-group col-sm-8">
+				<label class="control-label col-sm-3">First Name</label> 
+				<div class="col-sm-9">
+					<input type="text" name="firstname" class="form-control"/>
+				</div>
+		</div>
+        <div class="form-group col-sm-8">
+				<label class="control-label col-sm-3">Last Name</label> 
+				<div class="col-sm-9">
+					<input type="text" name="lastname" class="form-control"/>
+				</div>	
+		</div>
+        <div class="form-group col-sm-8">
+				<label class="control-label  col-sm-3">Email</label> 
+				<div class="col-sm-9">
+					<input type="text" name="email" class="form-control"/>
+				</div>	
+		</div>
+        <div class="form-group col-sm-8">
+				<label class="control-label col-sm-3">Address</label> 
+				<div class="col-sm-9">
+					<input type="text" name="address" class="form-control"/>
+				</div>	
+		</div>
+        <div class="form-group col-sm-8">
+				<label class="control-label col-sm-3">Contact Number</label> 
+				<div class="col-sm-9">
+					<input type="text" name="telno" class="form-control"/>
+				</div>	
+		</div>
+		
+        <div class="col-sm-8" align="center">
+                	<input type="submit" value="Register" class="btn btn-primary">
+                	<input type="reset" value="Clear" class="btn btn-primary">
+                	<a href="search">[Back to Search]</a>
+        </div>
         </form>
-          <a href="search">[Back to Search]</a>
+          
+    </div>      
     </div>
 </body>
 </html>

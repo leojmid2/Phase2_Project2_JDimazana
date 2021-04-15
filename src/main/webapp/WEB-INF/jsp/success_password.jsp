@@ -3,16 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>FlyAway Airline Booking</title>
+	<meta charset="UTF-8">
+	<title>FlyAway Airline Booking</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<br>
-	<br>
-	<div
-		style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center;">
-		<h2>Password Successfully Changed!</h2>
-
+	<div class="container" align="center">
+		<h2>User: ${loggedInUser.username} Password Successfully Changed!</h2>
+		<a href= "logout_admin">Logout</a>
 	</div>
+	
 </body>
 </html>

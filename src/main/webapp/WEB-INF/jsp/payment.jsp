@@ -5,45 +5,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Registration</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<title>Registration</title>
 </head>
 <body>
-    <div align="center">
-        <h1>New Customer</h1>
-        <form action="payment" method="post">
-        <table>
-            <tr>
-                <td>Name on the Card:</td>
-                <td><input type="text" name="name" /></td>
-            </tr>
-            <tr>
-                <td>Type of Card:</td>
-                <td><input type="text" name="type" /></td>
-            </tr>
-            <tr>
-                <td>Card Number:</td>
-                <td><input type="number" name="ccnumber" /></td>
-            </tr>
-            <tr>
-                <td>Expiration Date:</td>
-                <td><input type="date" name="ccdate" /></td>
-            </tr>
-            <tr>
-            	<td>CVV CODE</td>
-                <td><input type="number" name="cvv" /></td>
-            <tr>
-                <td colspan="2" align="center">
-                	<input type="submit" value="Pay Now">
-                </td>
-                               <td colspan="2" align="center">
-                	<input type="reset" value="Clear">
-                </td>
-  
-            </tr>
-        </table>
-        </form>
-           <a href="search">[Back to Search]</a>
+    <div class="container">
+        <h1>Payment Details</h1>
+        
+        <p class="text-danger">${message} </p>
+        
+        <form class="form-horizontal" action="payment" method="post">
+        
+		 <div class="form-group col-sm-8">
+    		<label class="control-label col-sm-3">Name on the Card</label>
+    		<div class="col-sm-9">
+      			<input type="text" class="form-control" id="name" name="name">
+    		</div>
+  		</div>
+     		 <div class="form-group col-sm-8">
+    		<label class="control-label col-sm-3">Type of Card</label>
+    		<div class="col-sm-9">
+    			<select id="type" name="type" class="form-control">
+			    <option value="VS">VISA</option>
+			    <option value="MC">Master Card</option>
+			    <option value="DS">Discover</option>
+			    <option value="AE">American Express</option>
+				</select>    			
+    		</div>
+  		</div>
+  	 	<div class="form-group col-sm-8">
+    		<label class="control-label col-sm-3">Credit Card Number</label>
+    		<div class="col-sm-9">
+      			<input type="text" class="form-control" id="ccn" name="ccn">
+    		</div>
+  		</div>
+  	 	<div class="form-group col-sm-8">
+    		<label class="control-label col-sm-3">Expiration Date</label>
+    		<div class="col-sm-9">
+      			<input type="date" class="form-control" id="exp" name="exp">
+    		</div>
+  		</div>
+  	 	<div class="form-group col-sm-8">
+    		<label class="control-label col-sm-3">CVV CODE</label>
+    		<div class="col-sm-9">
+      			<input type="text" class="form-control" id="cvv" name="cvv">
+    		</div>
+  		</div>
+  	 	<div class="form-group col-sm-8" align="center">
+    		 <input type="submit" value="Pay Now" class="btn btn-primary">
+             <input type="reset" value="Clear"class="btn btn-primary">
+             <a href="search">[Back to Search]</a>
+             
+  		</div>
+        
+       </form>
  
     </div>
 </body>

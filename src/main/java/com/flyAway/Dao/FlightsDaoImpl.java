@@ -55,4 +55,11 @@ public class FlightsDaoImpl implements FlightsDao {
 		
 	}
 
+
+	@Override
+	public Flight getFlight(long flightId) {
+		// TODO Auto-generated method stub
+		return (Flight)sessionFactory.getCurrentSession().get(Flight.class, flightId);
+	}
+
 }

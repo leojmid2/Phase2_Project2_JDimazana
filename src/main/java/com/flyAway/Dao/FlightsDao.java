@@ -12,4 +12,6 @@ public interface FlightsDao {
 	
 	public List<Flight> getFlights(int sourceid, int destinationid);
 
+	public Flight getFlight(long flightId);
+
 }

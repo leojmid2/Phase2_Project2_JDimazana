@@ -11,10 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
@@ -40,15 +37,15 @@
 					<td>${flight.source.name}</td>
 					<td>${flight.destination.name}</td>
 					<td>${flight.airline.name}</td>
-					<td>${flight.price}</td>
+					<td>$${flight.price}</td>
 					<td>${num_passenger}</td>
-					<td>${num_passenger*flight.price}</td>
+					<td>$${num_passenger*flight.price}</td>
 					<td><a href="register?id=${flight.flightid}">Book Flight</a></td>
 				</tr>
 			</c:forEach>	
 		</tbody>		
 		</table>
-		<h5><a href="search">Back to Search</a></h5>
+		<h5><a href="search">[Back to Search]</a></h5>
 	</div>
 </body>
 </html>

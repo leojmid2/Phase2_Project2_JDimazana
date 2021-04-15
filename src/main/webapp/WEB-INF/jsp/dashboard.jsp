@@ -3,29 +3,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>FlyAway Airline Booking</title>
+	<meta charset="UTF-8">
+	<title>FlyAway Airline Booking</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
 </head>
 <body>
-	<br>
-	<br>
-	<div
-		style="font-family: verdana; padding: 10px; border-radius: 10px; font-size: 12px; text-align: center;">
- 
-		Welcome ${user.username}
-		
+	<div class="container">
+	<h2>Welcome ${loggedInUser.username}</h2>
+	
+	  <div class="form-group col-sm-8">
+		<a href="change_password">Change Password</a>
+	  </div>
+	  <div class="form-group col-sm-8">
+		<a href="showPlaces">List of Places</a>
+	  </div>
+	  <div class="form-group col-sm-8">
+		<a href="showAirlines">List of Airlines</a>
+	  </div>
+	  <div class="form-group col-sm-8">
+		<a href="showFlights">List of Flights</a>
+	  </div>
+	  <div class="form-group col-sm-8">
+		<a href="logout_admin">[Logout]</a>
+	</div>	
 	</div>
-	<br>
-	<a href="change_password?id=${user.userid}">Change Password</a>
-	<br>
-	<a href="showPlaces">List of Places</a>
-	<br>
-	<a href="showAirlines">List of Airlines</a>
-	<br>
-	<a href="showFlights">List of Flights</a>
-	<input type="hidden" name="userid" value="${user.userid}"/>
-	
-	<a href="index">Go to Search</a>
-	
 </body>
 </html>

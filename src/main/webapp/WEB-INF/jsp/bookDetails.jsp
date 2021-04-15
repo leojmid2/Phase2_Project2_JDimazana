@@ -5,48 +5,55 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Booking Details</title>
 </head>
 <body>
-    <div align="center">
-        <h1>Booking Details</h1>
-        <table>
+    <div class="container">
+        <h2>Your flight is Successfully Booked!</h2>
+        <br>
+        <h3>Booking Details:</h3>
+        <div class="col-sm-8">
+        <table class="table">
             <tr>
                 <td>Name:</td>
-                <td>John Dow</td>
+                <td>${reg.firstname}&nbsp${reg.lastname}</td>
             </tr>
             <tr>
                 <td>Date</td>
-                <td>05/22/2021</td>
+                <td>${reg.dot}</td>
             </tr>
             <tr>
                 <td>Source</td>
-                <td>Los Angeles</td>
+                <td>${reg.source}</td>
             </tr>
             <tr>
                 <td>Destination</td>
-                <td>Milan</td>
+                <td>${reg.destination}</td>
             </tr>
             <tr>
                 <td>Airline</td>
-                <td>United Airlines</td>
+                <td>${reg.airline}</td>
             </tr>
             <tr>
             	<td>Price</td>
-                <td>$500</td>
+                <td>$${reg.price}</td>
              </tr>   
             <tr>
             	<td>Number of Passengers</td>
-                <td>4</td>
+                <td>${reg.num_passenger}</td>
              </tr>   
             <tr>
             	<td>Total Price</td>
-                <td>$2000</td>
+                <td>$${reg.totalPrice}</td>
              </tr>   
              </table>
              
-             <a href="search">[Back to Search]</a>
+             <a href="/FlyAway/">Back to Main</a>
+             </div>
     </div>
 </body>
 </html>

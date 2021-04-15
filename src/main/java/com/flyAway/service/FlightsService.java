@@ -11,5 +11,7 @@ public interface FlightsService {
 	public Flight getFlight(int sourceid, int destinationid, int airlineid);
 	
 	public List<Flight> getFlights(int sourceid, int destinationid);
+	
+	public Flight getFlight(long flightId);
 
 }

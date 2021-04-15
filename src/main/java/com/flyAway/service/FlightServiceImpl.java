@@ -33,4 +33,12 @@ public class FlightServiceImpl implements FlightsService {
 		return flightsDao.getFlights(sourceid, destinationid);
 	}
 
+	@Override
+	public Flight getFlight(long flightId) {
+		// TODO Auto-generated method stub
+		return flightsDao.getFlight(flightId);
+	}
+	
+	
+
 }

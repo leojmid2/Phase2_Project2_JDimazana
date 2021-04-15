@@ -3,6 +3,7 @@ package com.flyAway.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,53 +34,61 @@ public class UserController {
 	
 
 	@RequestMapping(value = "/login_admin",  method = RequestMethod.POST)
-	public ModelAndView loginAdmin(Model model, @RequestParam String username, @RequestParam String password ) {
+	public String loginAdmin(Model model, @RequestParam String username, @RequestParam String password, HttpSession session ) {
  
 		List<User> users = userService.getUser(username, password);
 
 		if (!users.isEmpty()) {
 			User user = (User) users.get(0);
-			return new ModelAndView("dashboard", "user", user);
+			session.setAttribute("loggedInUser", user);
+			return "dashboard";
+			//return "redirect:/";
 		}
 		else {
-			 model.addAttribute("back","change_password");
-			return new ModelAndView("error","message",username + " doesn't exist. Please try again.");
+			model.addAttribute("message","Error logging in. Please try again.");
+			return "login_admin";
+
 		}
 
 	}
 	
 	@RequestMapping(value = "/change_password",  method = RequestMethod.GET)
-	public ModelAndView changePassword(@RequestParam int id){
-		return new ModelAndView("change_password","id",id);
+	public ModelAndView changePassword(){
+		return new ModelAndView("change_password");
 	}
 	
 	@RequestMapping(value = "/change_password",  method = RequestMethod.POST)
-		public ModelAndView savePassword(Model model, @RequestParam int userid, @RequestParam String old_password, String password, String password2) {
+		public ModelAndView savePassword(Model model, @RequestParam String old_password, String password, String password2, HttpSession session ) {
 		
 			//validate password and new password.
 			//check old password 
-			User user = (User) userService.getUser(userid);
+			User user= (User)session.getAttribute("loggedInUser");
 			if (user.getPassword().equals(old_password)) {
 				
 				//check the two password is the same
-				if (password.contentEquals(password2)) {
+				if (password.contentEquals(password2) && (!password.isEmpty())) {
 					user.setPassword(password);
 					userService.updateEmployee(user);
 					System.out.println("new password save");
 				}
 				else {
-					 model.addAttribute("back","change_password");
-					return new ModelAndView("error","message", "New password doesn't match.Please try again");
+					 model.addAttribute("message","New password doesn't match. Please try again");
+					return new ModelAndView("change_password");
 				}
 			}
 			else {
-				 model.addAttribute("back","change_password");
-				return new ModelAndView("error","message", "Incorrect current password.Please try again");
-
+				 model.addAttribute("message","Incorrect current password.Please try again.");
+				 return new ModelAndView("change_password");
 			}
 		
-			//System.out.println("user id " + userid);
 			return new ModelAndView("success_password");
 	}
+	
+	@RequestMapping(value = "/logout_admin",  method = RequestMethod.GET)
+	public ModelAndView logout_admin(HttpSession session){
+		session.removeAttribute("loggedInUser");
+		return new ModelAndView("login_admin");
+	}
+
 	
 }
