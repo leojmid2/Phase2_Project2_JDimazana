@@ -31,8 +31,8 @@
 				<label>Re-enter New Password:</label> 
 				<input type="password" name="password2" class="form-control"/>
 		</div>
-		<input type="submit" value="Submit" class=""/>
-		<input type="reset" value="Clear"/>
+		<input type="submit" value="Submit" class="btn btn-primary"/>
+		<input type="reset" value="Clear" class="btn btn-primary"/>
 		</form>
 	</div>	
 	</div>	
