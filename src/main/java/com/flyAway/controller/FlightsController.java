@@ -51,7 +51,8 @@ public class FlightsController {
 	}
 	
 	
-	@RequestMapping(value = "/search",  method = RequestMethod.GET)
+	//@RequestMapping(value = "/search",  method = RequestMethod.GET)
+	@RequestMapping(value = "/",  method = RequestMethod.GET)
 	public String search(Model model, HttpSession session) {
 		
 		reg = null;
@@ -141,11 +142,14 @@ public class FlightsController {
 			model.addAttribute("message", "Please enter a valid name");
 			return new ModelAndView("payment");
 		}
+		
+		
+		
 		if (ccn.equals("")) {
 			model.addAttribute("message", "Please enter a valid Credit card number");
 			return new ModelAndView("payment");
 		}
-		if (exp.equals("mm/dd/yyy")) {
+		if (exp.equals("")) {
 			model.addAttribute("message", "Please select a valid date");
 			return new ModelAndView("payment");
 		}

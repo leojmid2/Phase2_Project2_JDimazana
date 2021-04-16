@@ -45,7 +45,7 @@
 			</c:forEach>	
 		</tbody>		
 		</table>
-		<h5><a href="search">[Back to Search]</a></h5>
+		<h5><a href="/FlyAway/">[Back to Search]</a></h5>
 	</div>
 </body>
 </html>

@@ -56,7 +56,7 @@
   	 	<div class="form-group col-sm-8" align="center">
     		 <input type="submit" value="Pay Now" class="btn btn-primary">
              <input type="reset" value="Clear"class="btn btn-primary">
-             <a href="search">[Back to Search]</a>
+             <a href="/FlyAway/">[Back to Search]</a>
              
   		</div>
         

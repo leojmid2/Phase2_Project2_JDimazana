@@ -54,7 +54,7 @@
         <div class="col-sm-8" align="center">
                 	<input type="submit" value="Register" class="btn btn-primary">
                 	<input type="reset" value="Clear" class="btn btn-primary">
-                	<a href="search">[Back to Search]</a>
+                	<a href="/FlyAway/">[Back to Search]</a>
         </div>
         </form>
           

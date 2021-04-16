@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Search for Flights</h2>
+		<h2>Search for Flights</h2><a href="login_admin">Login as Admin</a>
 	    <p class="text-danger">${message}</p>
  		<form class="form-horizontal" method="post" action="search">
  		 <div class="form-group col-sm-8">
@@ -50,7 +50,6 @@
  		 <div class="form-group col-sm-8" align="center">
 			<input type="submit" value="Search Flight" class="btn btn-primary"/>
 			<input type="reset" value="Clear" class="btn btn-primary"/>
-			<a href="/FlyAway">[Back to Main]</a>
 			
 		</div>	
 		</form>
