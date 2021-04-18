@@ -29,8 +29,8 @@
 		</tbody>		
 		</table>
 		<br>
+		<h5><a href="newPlace">Add New Place</a></h5>
 		<a href="logout_admin">[Logout]</a>
-		
-	</div>		
+	</div>
 </body>
 </html>

@@ -21,6 +21,13 @@ public class AirlinesServiceImpl implements AirlinesService{
 	public List<Airline> getAirlines() {
 		return airlinesDao.getAirlines();
 	}
+
+
+	@Override
+	@Transactional
+	public void addAirline(Airline airline) {
+		airlinesDao.addAirline(airline);
+	}
 	
 
 }

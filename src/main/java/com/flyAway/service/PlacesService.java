@@ -8,4 +8,6 @@ public interface PlacesService {
 
 	public List<Place> getPlaces();
 	
+	public void addPlace(Place place);
+	
 }

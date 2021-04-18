@@ -10,12 +10,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.flyAway.model.Airline;
 import com.flyAway.model.Flight;
 import com.flyAway.model.Place;
 import com.flyAway.model.Registration;
@@ -46,17 +48,73 @@ public class FlightsController {
 		
 		List<Flight> flights = flightsService.getFlights();
  		return new ModelAndView("showFlights", "flights", flights);
+ 	}
+	
+	@RequestMapping(value = "/newFlight",  method = RequestMethod.GET)
+	public ModelAndView newFlight() {
+		return new ModelAndView("flightForm2");
 	}
 	
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value = "/saveFlight2",  method = RequestMethod.POST)
+	public String save2Flight(Model model, HttpSession session, @RequestParam String source, @RequestParam String destination, @RequestParam String airline, @RequestParam String price) {
+		 
+		
+		Long sid = (Long.valueOf(source)); 
+		Long did = Long.valueOf(destination); 
+		Long aid = Long.valueOf(airline); 
+		Long pr = Long.valueOf(price); 
+		
+		System.out.println("sid and did " + sid +"  "+ did);
+		
+		if (sid.equals(did)) {
+			model.addAttribute("message", "Source and Destination cannot be the same.");
+			return "flightForm2";
+
+		}
+		if (price.equals("") || pr < 1) {
+			model.addAttribute("message", "Price must be greater Zero.");
+			return "flightForm2";
+		}
+		
+		
+		Flight f = new Flight();
+		List<Place> places = (List<Place>) session.getAttribute("places");
+		for (Place p:places) {
+			if (p.getPlaceid()==sid) {
+				f.setSource(p);
+			}
+		}
+		for (Place p:places) {
+			if (p.getPlaceid()==did) {
+				f.setDestination(p);
+			}
+		}
+		
+		List<Airline> airlines = (List<Airline>) session.getAttribute("airlines");
+		for (Airline a:airlines) {
+			if (a.getAirlineId()==aid) {
+				f.setAirline(a);;
+			}
+		}
+		
+		f.setPrice(pr);
+		
+		flightsService.addFlight(f);
+		return "redirect:/showFlights";
+	}
+
 	
-	//@RequestMapping(value = "/search",  method = RequestMethod.GET)
+	
 	@RequestMapping(value = "/",  method = RequestMethod.GET)
 	public String search(Model model, HttpSession session) {
 		
 		reg = null;
 		List<Place> places = placesService.getPlaces();
+		List<Airline> airlines = airlinesService.getAirlines();
 		model.addAttribute("datetoday",dtf.format(now));
 		session.setAttribute("places", places);
+		session.setAttribute("airlines", airlines);
 		return "search";
 	}
 

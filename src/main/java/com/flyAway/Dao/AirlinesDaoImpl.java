@@ -28,4 +28,11 @@ public class AirlinesDaoImpl implements AirlinesDao {
 		return sessionFactory.getCurrentSession().createQuery("from Airline").list();
 	}
 
+
+	@Override
+	public void addAirline(Airline airline) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().saveOrUpdate(airline);
+	}
+
 }

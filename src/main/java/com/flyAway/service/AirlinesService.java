@@ -8,5 +8,7 @@ public interface AirlinesService {
 	
 	public List<Airline> getAirlines();
 	
+	public void addAirline(Airline airline);
+	
 
 }

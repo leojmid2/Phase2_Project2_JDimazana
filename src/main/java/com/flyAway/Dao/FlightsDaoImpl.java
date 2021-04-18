@@ -2,10 +2,8 @@ package com.flyAway.Dao;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -58,8 +56,15 @@ public class FlightsDaoImpl implements FlightsDao {
 
 	@Override
 	public Flight getFlight(long flightId) {
-		// TODO Auto-generated method stub
 		return (Flight)sessionFactory.getCurrentSession().get(Flight.class, flightId);
+	}
+
+
+	@Override
+	public void addFlight(Flight flight) {
+		sessionFactory.getCurrentSession().saveOrUpdate(flight);
+		
+		
 	}
 
 }

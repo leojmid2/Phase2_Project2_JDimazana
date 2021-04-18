@@ -18,8 +18,13 @@ public class PlacesServiceImpl implements PlacesService {
 
 	@Override
 	public List<Place> getPlaces() {
-		// TODO Auto-generated method stub
 		return placesDao.getPlaces();
+	}
+
+	@Override
+	@Transactional
+	public void addPlace(Place place) {
+		placesDao.addPlace(place);
 	}
 
 }

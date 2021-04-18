@@ -27,8 +27,8 @@
 		</tbody>		
 		</table>
 	<br>
-	<a href="logout_admin">[Logout]</a>
-
+		<h5><a href="newAirline">Add New Airline</a></h5>
+		<a href="logout_admin">[Logout]</a>
 	</div>	
 		
 </body>

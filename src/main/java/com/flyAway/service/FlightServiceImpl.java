@@ -38,6 +38,12 @@ public class FlightServiceImpl implements FlightsService {
 		// TODO Auto-generated method stub
 		return flightsDao.getFlight(flightId);
 	}
+
+	@Override
+	@Transactional
+	public void addFlight(Flight flight) {
+		flightsDao.addFlight(flight);
+	}
 	
 	
 

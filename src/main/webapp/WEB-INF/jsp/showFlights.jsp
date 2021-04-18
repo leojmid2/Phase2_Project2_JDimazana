@@ -19,17 +19,20 @@
 				<th>Source</th>
 				<th>Destination</th>
 				<th>Airline</th>
+				<th>Price</th>
 			</tr>
 			<c:forEach items="${flights}" var="flight">
 				<tr>
 					<td>${flight.source.name}</td>
 					<td>${flight.destination.name}</td>
 					<td>${flight.airline.name}</td>
+					<td>${flight.price}</td>
 				</tr>
 			</c:forEach>	
 		</tbody>		
 		</table>
 		<br>
+		<h5><a href="newFlight">Add New Flight</a></h5>
 		<a href="logout_admin">[Logout]</a>
 		
 	</div>		

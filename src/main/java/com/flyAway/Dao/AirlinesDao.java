@@ -8,4 +8,5 @@ public interface AirlinesDao {
 	
 	public List<Airline> getAirlines();
 
+	public void addAirline(Airline airline);
 }

@@ -21,4 +21,12 @@ public class PlacesDaoImpl implements PlacesDao {
 		return sessionFactory.getCurrentSession().createQuery("from Place").list();
 	}
 
+
+	@Override
+	public void addPlace(Place place) {
+		sessionFactory.getCurrentSession().saveOrUpdate(place);
+	}
+	
+	
+
 }
